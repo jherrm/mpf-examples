@@ -1,0 +1,699 @@
+#config_version=5
+# Bram Stoker's Dracula
+
+machine:
+  balls_installed: 5
+  min_balls: 1
+
+virtual_platform_start_active_switches: s_trough_1 s_trough_2 s_trough_3 s_trough_4
+  s_trough_5, s_coin_door_closed
+
+mpf-mc:
+  fps: 60
+
+window:
+  width: 600
+  height: 200
+  title: Bram Stoker's Democula
+  resizable: true
+  fullscreen: false
+  borderless: false
+  exit_on_escape: true
+  source_display: window
+
+displays:
+  window:
+    width: 600
+    height: 200
+  dmd:
+    width: 128
+    height: 32
+    default: true
+
+switches:
+# Fliptronics
+  s_flipper_lower_right_eos:
+    number: sf1
+    tags:
+    label:
+  s_flipper_lower_right:
+    number: sf2
+    tags: player, high_score_right, right_flipper
+    label:
+  s_flipper_lower_left_eos:
+    number: sf3
+    tags:
+    label:
+  s_flipper_lower_left:
+    number: sf4
+    tags: player, high_score_left, left_flipper
+    label:
+  s_flipper_upper_left_eos:
+    number: sf5
+    tags:
+    label:
+# Direct
+  s_left_coin: # orange-brown
+    number: sd1
+    tags:
+    label:
+  s_center_coin: # orange-red
+    number: sd2
+    tags:
+    label:
+  s_right_coin: # orange-black
+    number: sd3
+    tags:
+    label:
+  s_fourth_coin: # orange-yellow
+    number: sd4
+    tags:
+    label:
+  s_esc: # orange-green
+    number: sd5
+    tags: service_esc
+    label:
+  s_down: # orange-blue
+    number: sd6
+    tags: service_down
+    label:
+  s_up: # orange-violet
+    number: sd7
+    tags: service_up
+    label:
+  s_enter: # orange-gray
+    number: sd8
+    tags: service_enter
+    label:
+# Matrix
+#  name:
+#    number: s11
+#    label:
+#    tags:
+#  name:
+#    number: s12
+#    label:
+#    tags:
+  s_start:
+    number: s13
+    label:
+    tags: start, player, high_score_select
+  s_plumb_bob:
+    number: s14
+    label:
+    tags: tilt_warning
+  s_left_drop_target:
+    number: s15
+    label:
+    tags:
+  s_left_drop_score:
+    number: s16
+    label:
+    tags:
+  s_shooter_lane:
+    number: s17
+    label:
+    tags:
+#  name:
+#    number: s18
+#    label:
+#    tags:
+  s_slam_tilt:
+    number: s21
+    label:
+    tags: slam_tilt
+  s_coin_door_closed:
+    number: s22
+    label:
+    tags: service_door_closed, power_on
+  s_ticket_opto:
+    number: s23
+    label:
+    tags:
+  s_always_closed:
+    number: s24
+    label:
+    tags:
+  s_left_rollover:
+    number: s25
+    label:
+  s_center_rollover:
+    number: s26
+    label:
+  s_right_rollover:
+    number: s27
+    label:
+  s_right_ramp_exit:
+    number: s28
+    label:
+    tags: playfield_active
+  s_under_shooter_ramp:
+    number: s31
+    label:
+    tags:
+#  name:
+#    number: s32
+#    label:
+#    tags:
+#  name:
+#    number: s33
+#    label:
+#    tags:
+  s_ball_launch:
+    number: s34
+    label:
+    tags: plunger, player
+  s_left_outlane:
+    number: s35
+    label:
+    tags: playfield_active, outlane
+  s_left_inlane:
+    number: s36
+    label:
+    tags: playfield_active, inlane
+  s_right_inlane:
+    number: s37
+    label:
+    tags: playfield_active, inlane
+  s_right_outlane:
+    number: s38
+    label:
+    tags: playfield_active, outlane
+  s_trough_1:
+    number: s41
+    label:
+    tags:
+    type: NC
+  s_trough_2:
+    number: s42
+    label:
+    tags:
+    type: NC
+  s_trough_3:
+    number: s43
+    label:
+    tags:
+    type: NC
+  s_trough_4:
+    number: s44
+    label:
+    tags:
+    type: NC
+#  name:
+#    number: s45
+#    label:
+#    tags:
+#  name:
+#    number: s46
+#    label:
+#    tags:
+#  name:
+#    number: s47
+#    label:
+#    tags:
+  s_outhole:
+    number: s48
+    label:
+    tags:
+  s_top_right_lane_opto:
+    number: s51
+    label:
+    tags:
+  s_left_magnet_pocket_opto:
+    number: s52
+    label:
+    tags:
+  s_castle_1_opto:
+    number: s53
+    label:
+    tags:
+  s_castle_2_opto:
+    number: s54
+    label:
+    tags:
+  s_wire_ramp_popper_opto:
+    number: s55
+    label:
+    tags:
+  s_crypt_popper_opto:
+    number: s56
+    label:
+    tags:
+  s_castle_3_opto:
+    number: s57
+    label:
+    tags:
+  s_mystery_hole:
+    number: s58
+    label:
+    tags:
+  s_left_jet:
+    number: s61
+    label:
+    tags: jet
+  s_right_jet:
+    number: s62
+    label:
+    tags: jet
+  s_bottom_jet:
+    number: s63
+    label:
+    tags: jet
+  s_left_slingshot:
+    number: s64
+    label:
+    tags: slingshot
+  s_right_slingshot:
+    number: s65
+    label:
+    tags: slingshot
+  s_left_3_bank_top:
+    number: s66
+    label:
+  s_left_3_bank_middle:
+    number: s67
+    label:
+  s_left_3_bank_bottom:
+    number: s68
+    label:
+  s_castle_popper_opto:
+    number: s71
+    label:
+    tags:
+  s_coffin_popper_opto:
+    number: s72
+    label:
+    tags:
+  s_left_ramp_enter_opto:
+    number: s73
+    label:
+    tags: playfield_active, ramp_1_enter
+#  name:
+#    number: s74
+#    label:
+#    tags:
+#  name:
+#    number: s75
+#    label:
+#    tags:
+#  name:
+#    number: s76
+#    label:
+#    tags:
+  s_right_ramp_up:
+    number: s77
+    label:
+    tags:
+#  name:
+#    number: s78
+#    label:
+#    tags:
+  s_left_magnet:
+    number: s81
+    label:
+    tags:
+  s_ball_on_magnet:
+    number: s82
+    label:
+    tags:
+  s_right_magnet:
+    number: s83
+    label:
+    tags:
+  s_left_ramp_exit:
+    number: s84
+    label:
+    tags: playfield_active
+  s_left_ramp_diverted:
+    number: s85
+    label:
+    tags:
+  s_middle_3_bank_left:
+    number: s86
+    label:
+  s_middle_3_bank_middle:
+    number: s87
+    label:
+  s_middle_3_bank_right:
+    number: s88
+    label:
+
+lights:
+  l_ball_save:
+    number: l11
+    label:
+    tags: red
+    x: 0
+    y: 0
+  l_shoot_again:
+    number: l16
+    label:
+    tags: orange
+  l_extra_ball:
+    number: l45
+    label:
+    tags: yellow
+  l_start_multiball:
+    number: l46
+    label:
+    tags: yellow
+  l_right_rollover:
+    number: l68
+    label:
+    tags: green
+  l_ball_launch:
+    number: l87
+    label:
+    tags: cabinet
+  l_start:
+    number: l88
+    label:
+    tags: cabinet
+  f_jets:
+    number: c21
+    label:
+    tags:
+  f_left_ramp_upper:
+    number: c23
+    label:
+    tags:
+  f_left_ramp_lower:
+    number: c24
+    label:
+    tags:
+  f_right_ramp:
+    number: c27
+    label:
+    tags:
+  f_eject:
+    number: c28
+    label:
+    tags:
+
+  gi_back_panel:
+    number: g01
+    label:
+    tags:
+  gi_upper_right:
+    number: g02
+    label:
+    tags:
+  gi_upper_left:
+    number: g03
+    label:
+    tags:
+  gi_lower_right:
+    number: g04
+    label:
+    tags:
+  gi_lower_left:
+    number: g05
+    label:
+    tags:
+    #gi06:
+    #    number: g06
+    #    label:
+    #    tags:
+
+coils:
+  c_trough_eject:
+    number: c01
+    label:
+    tags:
+    default_pulse_ms: 25
+  c_bottom_popper:
+    number: c02
+    label:
+    tags:
+    default_pulse_ms: 25
+  c_plunger_lane:
+    number: c03
+    label:
+    tags:
+    default_pulse_ms: 25
+  c_top_popper:
+    number: c04
+    label:
+    tags:
+    default_pulse_ms: 30
+  c_diverter_power:
+    number: c05
+    label:
+    tags:
+    default_pulse_ms: 30
+    max_hold_power: 0.5
+    #name:
+    #    number: c06
+    #    label:
+    #    tags:
+  c_knocker:
+    number: c07
+    label:
+    tags:
+    #name:
+    #    number: c08
+    #    label:
+    #    tags:
+  c_left_slingshot:
+    number: c09
+    label:
+    tags:
+  c_right_slingshot:
+    number: c10
+    label:
+    tags:
+  c_left_jet_bumper:
+    number: c11
+    label:
+    tags:
+  c_top_slingshot:
+    number: c12
+    label:
+    tags:
+  c_right_jet_bumper:
+    number: c13
+    label:
+    tags:
+  c_retina_eject:
+    number: c14
+    label:
+    tags:
+  c_diverter_hold:
+    number: c15
+    label:
+    tags:
+    max_hold_power: 1.0
+    #name:
+    #    number: c16
+    #    label:
+    #    tags:
+  c_elevator_motor:
+    number: c18
+    label:
+    tags:
+    max_hold_power: 1.0
+  c_claw_motor_left:
+    number: c19
+    label:
+    tags:
+    max_hold_power: 1.0
+  c_claw_motor_right:
+    number: c20
+    label:
+    tags:
+    max_hold_power: 1.0
+
+# Fliptronics coils
+  c_flipper_left_main:
+    number: fllm
+    label:
+    tags:
+    default_pulse_ms: 30
+  c_flipper_left_hold:
+    number: fllh
+    label:
+    tags:
+    max_hold_power: 1.0
+  c_flipper_right_main:
+    number: flrm
+    label:
+    tags:
+    default_pulse_ms: 30
+  c_flipper_right_hold:
+    number: flrh
+    label:
+    tags:
+    max_hold_power: 1.0
+  c_flipper_upper_main:
+    number: fulm
+    label:
+    tags:
+    default_pulse_ms: 30
+  c_flipper_upper_hold:
+    number: fulh
+    label:
+    tags:
+    max_hold_power: 1.0
+  c_claw_magnet:
+    number: furm
+    label:
+    tags:
+    max_hold_power: 1.0
+    #name:
+    #    number: furh
+    #    label:
+    #    tags:
+
+playfields:
+  playfield:
+    default_source_device: shooter_lane
+    tags: default
+
+ball_devices:
+  trough:
+    tags: trough, home, drain
+    ball_switches: s_trough_1, s_trough_2, s_trough_3, s_trough_4, s_trough_5, s_trough_jam
+    eject_coil: c_trough_eject
+    confirm_eject_type: target
+    eject_targets: shooter_lane
+    jam_switch: s_trough_jam
+
+  shooter_lane:
+    ball_switches: s_shooter_lane
+    eject_coil: c_plunger_lane
+    player_controlled_eject_event: sw_plunger
+
+
+  retina_hole:
+    ball_switches: s_eject
+    eject_coil: c_retina_eject
+
+  lower_vuk:
+    ball_switches: s_bottom_popper
+    eject_coil: c_bottom_popper
+
+  upper_vuk:
+    ball_switches: s_top_popper
+    eject_coil: c_top_popper
+
+  elevator:
+    ball_switches: s_elevator_hold
+    mechanical_eject: true
+
+diverters:
+  diverter:
+    activation_coil: c_diverter_power
+    type: hold
+    activation_time: 3s
+    activation_switches: s_right_ramp_enter
+    #deactivation_switches: s_elevator_hold
+    targets_when_active: elevator
+
+autofire_coils:
+  left_slingshot:
+    coil: c_left_slingshot
+    switch: s_left_slingshot
+  right_slingshot:
+    coil: c_right_slingshot
+    switch: s_right_slingshot
+  upper_slingshot:
+    coil: c_top_slingshot
+    switch: s_top_slingshot
+  left_jet:
+    coil: c_left_jet_bumper
+    switch: s_left_jet
+  right_jet:
+    coil: c_right_jet_bumper
+    switch: s_right_jet
+
+flippers:
+  lower_left:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_flipper_lower_left
+  lower_right:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_flipper_lower_right
+  upper_left:
+    main_coil: c_flipper_upper_main
+    hold_coil: c_flipper_upper_hold
+    activation_switch: s_flipper_lower_left
+
+sound_system:
+  tracks:
+    voice:
+      volume: 1
+      priority: 2
+      simultaneous_sounds: 1
+      preload: true
+    sfx:
+      volume: 1
+      priority: 1
+      preload: true
+      simultaneous_sounds: 7
+    music:
+      volume: 0.5
+      simultaneous_sounds: 1
+  buffer: 2048  # previous value was 512
+  frequency: 44100
+  channels: 1
+  master_volume: 1
+  enabled: true
+
+assets:
+  sounds:
+    default:
+      track: sfx
+    music:
+      track: music
+    sfx:
+      track: sfx
+    voice:
+      track: voice
+
+slides:
+  window_slide_1:
+  - type: display
+    width: 512
+    height: 128
+    effects:
+      - type: dmd
+        dot_color: ff5500
+        background_color: 220000
+  - type: text
+    style: tall_title
+    text: MISSION PINBALL FRAMEWORK
+    anchor_y: top
+    y: top-3
+    font_size: 30
+    color: white
+  - type: rectangle
+    width: 514
+    height: 130
+    color: 444444
+  - type: text
+    style: tall_title
+    text: DEMO MAN
+    anchor_x: right
+    anchor_y: bottom
+    y: bottom+3
+    x: right-42
+    font_size: 30
+    color: red
+
+  waiting_for_connection:
+  - type: text
+    text: WAITING FOR MPF CONNECTION
+
+  asset_status:
+  - type: text
+    text: "LOADING ASSETS: (percent)%"
+
+slide_player:
+  mc_ready:
+    window_slide_1:
+      target: window
+  loading_assets: asset_status
+
+
