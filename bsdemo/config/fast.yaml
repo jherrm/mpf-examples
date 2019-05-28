@@ -3,7 +3,7 @@ fast:
   ports: COM3, COM4, COM5
 
 hardware:
-  driverboards: wpc
+  driverboards: pdb
   platform: fast
 
 config:

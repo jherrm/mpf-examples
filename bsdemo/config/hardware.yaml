@@ -5,8 +5,7 @@ machine:
   balls_installed: 5
   min_balls: 1
 
-virtual_platform_start_active_switches: s_trough_1 s_trough_2 s_trough_3 s_trough_4
-  s_trough_5, s_coin_door_closed
+virtual_platform_start_active_switches: s_trough_1 s_trough_2 s_trough_3 s_trough_4, s_coin_door_closed
 
 mpf-mc:
   fps: 60
@@ -339,121 +338,123 @@ switches:
     label:
 
 lights:
-  l_ball_save:
-    number: l11
-    label:
-    tags: red
-    x: 0
-    y: 0
-  l_shoot_again:
-    number: l16
-    label:
-    tags: orange
-  l_extra_ball:
-    number: l45
-    label:
-    tags: yellow
-  l_start_multiball:
-    number: l46
-    label:
-    tags: yellow
-  l_right_rollover:
-    number: l68
-    label:
-    tags: green
-  l_ball_launch:
-    number: l87
-    label:
-    tags: cabinet
-  l_start:
-    number: l88
-    label:
-    tags: cabinet
-  f_jets:
-    number: c21
-    label:
-    tags:
-  f_left_ramp_upper:
-    number: c23
-    label:
-    tags:
-  f_left_ramp_lower:
-    number: c24
-    label:
-    tags:
-  f_right_ramp:
-    number: c27
-    label:
-    tags:
-  f_eject:
-    number: c28
-    label:
-    tags:
+  # l_ball_save:
+  #   number: l11
+  #   label:
+  #   tags: red
+  #   x: 0
+  #   y: 0
+  # l_shoot_again:
+  #   number: l16
+  #   label:
+  #   tags: orange
+  # l_extra_ball:
+  #   number: l45
+  #   label:
+  #   tags: yellow
+  # l_start_multiball:
+  #   number: l46
+  #   label:
+  #   tags: yellow
+  # l_right_rollover:
+  #   number: l68
+  #   label:
+  #   tags: green
+  # l_ball_launch:
+  #   number: l87
+  #   label:
+  #   tags: cabinet
+  # l_start:
+  #   number: l88
+  #   label:
+  #   tags: cabinet
+  # f_jets:
+  #   number: c21
+  #   label:
+  #   tags:
+  # f_left_ramp_upper:
+  #   number: c23
+  #   label:
+  #   tags:
+  # f_left_ramp_lower:
+  #   number: c24
+  #   label:
+  #   tags:
+  # f_right_ramp:
+  #   number: c27
+  #   label:
+  #   tags:
+  # f_eject:
+  #   number: c28
+  #   label:
+  #   tags:
 
-  gi_back_panel:
-    number: g01
-    label:
-    tags:
-  gi_upper_right:
-    number: g02
-    label:
-    tags:
-  gi_upper_left:
-    number: g03
-    label:
-    tags:
-  gi_lower_right:
-    number: g04
-    label:
-    tags:
-  gi_lower_left:
-    number: g05
-    label:
-    tags:
+  # gi_back_panel:
+  #   number: g01
+  #   label:
+  #   tags:
+  # gi_upper_right:
+  #   number: g02
+  #   label:
+  #   tags:
+  # gi_upper_left:
+  #   number: g03
+  #   label:
+  #   tags:
+  # gi_lower_right:
+  #   number: g04
+  #   label:
+  #   tags:
+  # gi_lower_left:
+  #   number: g05
+  #   label:
+  #   tags:
     #gi06:
     #    number: g06
     #    label:
     #    tags:
 
 coils:
-  c_trough_eject:
+  c_plunger_lane:
     number: c01
     label:
     tags:
     default_pulse_ms: 25
-  c_bottom_popper:
+  c_coffin_popper:
     number: c02
     label:
     tags:
     default_pulse_ms: 25
-  c_plunger_lane:
+  c_castle_popper:
     number: c03
     label:
     tags:
-    default_pulse_ms: 25
-  c_top_popper:
+    default_pulse_ms: 30
+  c_right_ramp_down:
     number: c04
     label:
     tags:
     default_pulse_ms: 30
-  c_diverter_power:
+    max_hold_power: 0.5
+  c_crypt_popper:
     number: c05
     label:
     tags:
+    default_pulse_ms: 25
+  c_wire_ramp_popper:
+    number: c06
+    label:
+    tags:
     default_pulse_ms: 30
-    max_hold_power: 0.5
-    #name:
-    #    number: c06
-    #    label:
-    #    tags:
   c_knocker:
     number: c07
     label:
     tags:
-    #name:
-    #    number: c08
-    #    label:
-    #    tags:
+  c_shooter_ramp_entry:
+    number: c08
+    label:
+    tags:
+    default_pulse_ms: 25
   c_left_slingshot:
     number: c09
     label:
@@ -466,83 +467,125 @@ coils:
     number: c11
     label:
     tags:
-  c_top_slingshot:
+  c_right_jet_bumper:
     number: c12
     label:
     tags:
-  c_right_jet_bumper:
+  c_bottom_jet_bumper:
     number: c13
     label:
     tags:
-  c_retina_eject:
+  c_right_ramp_up:
     number: c14
     label:
     tags:
-  c_diverter_hold:
+    default_pulse_ms: 30
+    max_hold_power: 0.5
+  c_outhole:
     number: c15
     label:
     tags:
-    max_hold_power: 1.0
-    #name:
-    #    number: c16
-    #    label:
-    #    tags:
-  c_elevator_motor:
-    number: c18
+    default_pulse_ms: 25
+  c_trough_eject:
+    number: c16
+    label:
+    tags:
+    default_pulse_ms: 25
+  # f_top_right_flasher:
+  #    number: c17
+  #    label:
+  #    tags:
+  # f_jackpot_flasher:
+  #    number: c18
+  #    label:
+  #    tags:
+  # f_three_bank_flasher:
+  #    number: c19
+  #    label:
+  #    tags:
+  # f_top_left_flasher:
+  #    number: c20
+  #    label:
+  #    tags:
+  # f_castle_flasher:
+  #    number: c21
+  #    label:
+  #    tags:
+  # f_left_ramp_flasher:
+  #    number: c22
+  #    label:
+  #    tags:
+  # f_right_ramp_flasher:
+  #    number: c23
+  #    label:
+  #    tags:
+  # f_asylum_flasher:
+  #    number: c24
+  #    label:
+  #    tags:
+  c_left_drop_target:
+    number: c25
+    label:
+    tags:
+  # f_speaker_flasher:
+  #    number: c26
+  #    label:
+  #    tags:
+  c_mist_magnet:
+    number: c27
     label:
     tags:
     max_hold_power: 1.0
-  c_claw_motor_left:
-    number: c19
-    label:
-    tags:
-    max_hold_power: 1.0
-  c_claw_motor_right:
-    number: c20
+  c_mist_magnet_motor:
+    number: c28
     label:
     tags:
     max_hold_power: 1.0
 
 # Fliptronics coils
   c_flipper_left_main:
-    number: fllm
+    # number: fllm
+    number: A0-B1-0
     label:
     tags:
     default_pulse_ms: 30
   c_flipper_left_hold:
-    number: fllh
+    # number: fllh
+    number: A0-B1-1
     label:
     tags:
     max_hold_power: 1.0
   c_flipper_right_main:
-    number: flrm
+    # number: flrm
+    number: A0-B1-2
     label:
     tags:
     default_pulse_ms: 30
   c_flipper_right_hold:
-    number: flrh
+    # number: flrh
+    number: A0-B1-3
     label:
     tags:
     max_hold_power: 1.0
-  c_flipper_upper_main:
+  c_up_down_diverter:
     number: fulm
     label:
     tags:
     default_pulse_ms: 30
-  c_flipper_upper_hold:
+  c_right_gate:
     number: fulh
     label:
     tags:
     max_hold_power: 1.0
-  c_claw_magnet:
+  c_castle_release_post:
     number: furm
     label:
     tags:
     max_hold_power: 1.0
-    #name:
-    #    number: furh
-    #    label:
-    #    tags:
+  c_left_ball_gate_actuator:
+    number: furh
+    label:
+    tags:
 
 playfields:
   playfield:
@@ -552,42 +595,44 @@ playfields:
 ball_devices:
   trough:
     tags: trough, home, drain
-    ball_switches: s_trough_1, s_trough_2, s_trough_3, s_trough_4, s_trough_5, s_trough_jam
+    ball_switches: s_trough_1, s_trough_2, s_trough_3, s_trough_4
     eject_coil: c_trough_eject
     confirm_eject_type: target
     eject_targets: shooter_lane
-    jam_switch: s_trough_jam
 
   shooter_lane:
     ball_switches: s_shooter_lane
     eject_coil: c_plunger_lane
     player_controlled_eject_event: sw_plunger
 
+  wire_ramp_popper:
+    ball_switches: s_wire_ramp_popper_opto
+    eject_coil: c_wire_ramp_popper
 
-  retina_hole:
-    ball_switches: s_eject
-    eject_coil: c_retina_eject
+  crypt_popper:
+    ball_switches: s_crypt_popper_opto
+    eject_coil: c_crypt_popper
 
-  lower_vuk:
-    ball_switches: s_bottom_popper
-    eject_coil: c_bottom_popper
+  castle_popper:
+    ball_switches: s_castle_popper_opto
+    eject_coil: c_castle_popper
 
-  upper_vuk:
-    ball_switches: s_top_popper
-    eject_coil: c_top_popper
+  coffin_popper:
+    ball_switches: s_coffin_popper_opto
+    eject_coil: c_coffin_popper
 
-  elevator:
-    ball_switches: s_elevator_hold
-    mechanical_eject: true
+  # mist_mech:
+  #   ball_switches: s_elevator_hold
+  #   mechanical_eject: true
 
-diverters:
-  diverter:
-    activation_coil: c_diverter_power
-    type: hold
-    activation_time: 3s
-    activation_switches: s_right_ramp_enter
-    #deactivation_switches: s_elevator_hold
-    targets_when_active: elevator
+# diverters:
+  # diverter:
+  #   activation_coil: c_diverter_power
+  #   type: hold
+  #   activation_time: 3s
+  #   activation_switches: s_right_ramp_enter
+  #   #deactivation_switches: s_elevator_hold
+  #   targets_when_active: elevator
 
 autofire_coils:
   left_slingshot:
@@ -596,15 +641,15 @@ autofire_coils:
   right_slingshot:
     coil: c_right_slingshot
     switch: s_right_slingshot
-  upper_slingshot:
-    coil: c_top_slingshot
-    switch: s_top_slingshot
   left_jet:
     coil: c_left_jet_bumper
     switch: s_left_jet
   right_jet:
     coil: c_right_jet_bumper
     switch: s_right_jet
+  bottom_jet:
+    coil: c_bottom_jet_bumper
+    switch: s_bottom_jet
 
 flippers:
   lower_left:
@@ -615,10 +660,6 @@ flippers:
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
     activation_switch: s_flipper_lower_right
-  upper_left:
-    main_coil: c_flipper_upper_main
-    hold_coil: c_flipper_upper_hold
-    activation_switch: s_flipper_lower_left
 
 sound_system:
   tracks:

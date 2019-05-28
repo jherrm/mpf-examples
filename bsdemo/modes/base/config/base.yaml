@@ -27,9 +27,9 @@ sound_player:
     base background music:
       loops: -1
 
-  balldevice_elevator_ball_enter:
-    base background music:
-      loops: -1
+  # balldevice_elevator_ball_enter:
+  #   base background music:
+  #     loops: -1
 
   sw_ramp_1: ramp 1
   sw_ramp_2: ramp 2
@@ -38,57 +38,55 @@ sound_player:
   sw_slingshot: little metal
   sw_jet: medium metal
 
-variable_player:
-  left_orbit_hit:
-    score: 1000000
-  left_ramp_hit:
-    score: 1000000
-  side_ramp_hit:
-    score: 2000000
-  right_ramp_hit:
-    score: 1000000
-  right_orbit_hit:
-    score: 1500000
-  center_ramp_hit:
-    score: 250000
-  sw_slingshot:
-    score: 5170
-  sw_jet:
-    score: 75020
-  sw_outlane:
-    score: 24440
-  sw_inlane:
-    score: 47650
-  standups_lit_hit:
-    score: 10000
-  standups_unlit_hit:
-    score: 50000
-  standups_lit_complete:
-    score: 100000
-  rollover_lanes_lit_hit:
-    score: 5000
-  rollover_lanes_unlit_hit:
-    score: 45000
-  rollover_lanes_lit_complete:
-    score: 375000
-  sw_small_car_crash:
-    score: 25000
-  sw_big_car_crash:
-    score: 11000
-  balldevice_lower_vuk_ball_enter:
-    score: 475000
-  balldevice_upper_vuk_ball_enter:
-    score: 110000
-  balldevice_retina_hole_ball_enter:
-    score: 225000
+# variable_player:
+#   left_orbit_hit:
+#     score: 1000000
+#   left_ramp_hit:
+#     score: 1000000
+#   side_ramp_hit:
+#     score: 2000000
+#   right_ramp_hit:
+#     score: 1000000
+#   right_orbit_hit:
+#     score: 1500000
+#   center_ramp_hit:
+#     score: 250000
+#   sw_slingshot:
+#     score: 5170
+#   sw_jet:
+#     score: 75020
+#   sw_outlane:
+#     score: 24440
+#   sw_inlane:
+#     score: 47650
+#   standups_lit_hit:
+#     score: 10000
+#   standups_unlit_hit:
+#     score: 50000
+#   standups_lit_complete:
+#     score: 100000
+#   rollover_lanes_lit_hit:
+#     score: 5000
+#   rollover_lanes_unlit_hit:
+#     score: 45000
+#   rollover_lanes_lit_complete:
+#     score: 375000
+#   sw_small_car_crash:
+#     score: 25000
+#   sw_big_car_crash:
+#     score: 11000
+#   balldevice_lower_vuk_ball_enter:
+#     score: 475000
+#   balldevice_upper_vuk_ball_enter:
+#     score: 110000
 
-shot_groups:
-  rollover_lanes:
-    shots: left_lane, middle_lane, right_lane
-    rotate_left_events: sw_left_flipper
-    rotate_right_events: sw_right_flipper
-  standups:
-    shots: standup_1, standup_2, standup_3, standup_4, standup_5
+# shot_groups:
+#   rollover_lanes:
+#     shots: left_lane, middle_lane, right_lane
+#     rotate_left_events: sw_left_flipper
+#     rotate_right_events: sw_right_flipper
+#   standups:
+#     shots: standup_1, standup_2, standup_3, standup_4, standup_5
 
 slides:
   slide_1:
@@ -281,38 +279,38 @@ show_player:
   left_orbit_unlit_hit:
     left orbit: {}
 
-shots:
-  left_lane:
-    switch: s_left_rollover
-    show_tokens:
-      light: l_left_rollover
-  middle_lane:
-    switch: s_center_rollover
-    show_tokens:
-      light: l_middle_rollover
-  right_lane:
-    switch: s_right_rollover
-    show_tokens:
-      light: l_right_rollover
-  standup_1:
-    switch: s_standup_1
-    show_tokens:
-      light: l_standup_1
-  standup_2:
-    switch: s_standup_2
-    show_tokens:
-      light: l_standup_2
-  standup_3:
-    switch: s_standup_3
-    show_tokens:
-      light: l_standup_3
-  standup_4:
-    switch: s_standup_4
-    show_tokens:
-      light: l_standup_4
-  standup_5:
-    switch: s_standup_5
-    show_tokens:
-      light: l_standup_5
-  center_ramp:
-    switch: s_center_ramp
+# shots:
+#   left_lane:
+#     switch: s_left_rollover
+#     show_tokens:
+#       light: l_left_rollover
+#   middle_lane:
+#     switch: s_center_rollover
+#     show_tokens:
+#       light: l_middle_rollover
+#   right_lane:
+#     switch: s_right_rollover
+#     show_tokens:
+#       light: l_right_rollover
+#   standup_1:
+#     switch: s_standup_1
+#     show_tokens:
+#       light: l_standup_1
+#   standup_2:
+#     switch: s_standup_2
+#     show_tokens:
+#       light: l_standup_2
+#   standup_3:
+#     switch: s_standup_3
+#     show_tokens:
+#       light: l_standup_3
+#   standup_4:
+#     switch: s_standup_4
+#     show_tokens:
+#       light: l_standup_4
+#   standup_5:
+#     switch: s_standup_5
+#     show_tokens:
+#       light: l_standup_5
+#   center_ramp:
+#     switch: s_center_ramp

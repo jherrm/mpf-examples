@@ -4,7 +4,7 @@ fast:
   ports: COM3, COM4, COM5
 
 hardware:
-  driverboards: wpc
+  driverboards: pdb
   platform: p_roc
 
 dmds:
@@ -14,7 +14,7 @@ dmds:
 
 config:
 - hardware.yaml
-- shots.yaml
+# - shots.yaml
 - keyboard.yaml
 
 smart_virtual:
@@ -29,17 +29,17 @@ game:
 
 modes:
 - base
-- claw_lit_for_major_mode
-- mode1_acmag
-- skillshot
-- bonus
-- high_score
-- tilt
-- service
+# - claw_lit_for_major_mode
+# - mode1_acmag
+# - skillshot
+# - bonus
+# - high_score
+# - tilt
+# - service
 #  - credits
 
-scriptlets:
-  claw.Claw
+# scriptlets:
+#   claw.Claw
 
 widget_styles:
   text_default:
