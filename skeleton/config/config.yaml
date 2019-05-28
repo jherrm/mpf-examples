@@ -1,0 +1,227 @@
+#config_version=5
+
+machine:
+  balls_installed: 5
+  min_balls: 1
+
+virtual_platform_start_active_switches: s_trough_1 s_trough_2 s_trough_3 #s_trough_4 s_trough_5, s_coin_door_closed
+
+hardware:
+  platform: p_roc
+  driverboards: pdb
+
+# p_roc:
+#   use_watchdog: false
+
+mpf-mc:
+  fps: 60
+
+window:
+  width: 600
+  height: 200
+  title: GRAVITY
+  resizable: true
+  fullscreen: false
+  borderless: false
+  exit_on_escape: true
+  source_display: window
+
+displays:
+  window:
+    width: 600
+    height: 200
+  # dmd:
+  #   width: 128
+  #   height: 32
+  #   default: true
+
+slides:
+  welcome_slide:
+    widgets:
+      - type: text
+        text: GRAVITY
+  attract_started:
+    widgets:
+      - text: ATTRACT MODE
+        type: text
+
+
+slide_player:
+  init_done: welcome_slide
+  mode_attract_started: attract_started
+
+switches:
+  s_start_button:
+    number: sd0
+    tags: start, player, high_score_select
+  s_launch_button:
+    number: sd1
+  s_plunger_lane:
+    number: sd7
+  s_flipper_left_button:
+    number: sd2
+    tags: left_flipper
+  s_flipper_right_button:
+    number: sd3
+    tags: right_flipper
+  s_flipper_left_eos:
+    number: sd8
+    tags:
+    label:
+  s_flipper_right_eos:
+    number: sd9
+    tags:
+    label:
+
+  s_outlane_left:
+    number: sd12
+    label:
+    tags: playfield_active, outlane
+  s_inlane_left:
+    number: sd14
+    label:
+    tags: playfield_active, inlane
+  s_inlane_right:
+    number: sd15
+    label:
+    tags: playfield_active, inlane
+  s_outlane_right:
+    number: sd13
+    label:
+    tags: playfield_active, outlane
+
+  s_slingshot_left:
+    number: sd10
+    label:
+    tags: slingshot
+  s_slingshot_right:
+    number: sd11
+    label:
+    tags: slingshot
+
+  s_trough_1:
+    number: sd4
+    label:
+    tags:
+    type: NC
+  s_trough_2:
+    number: sd5
+    label:
+    tags:
+    type: NC
+  s_trough_3:
+    number: sd6
+    label:
+    tags:
+    type: NC
+  # s_trough_4:
+  #   number: sd7
+  #   label:
+  #   tags:
+  #   type: NC
+  # s_trough_5:
+  #   number: s35
+  #   label:
+  #   tags:
+  #   type: NC
+  # s_trough_jam:
+  #   number: s36
+  #   label:
+  #   tags:
+  #   type: NC
+    #name:
+    #    number: s37
+    #    label:
+    #    tags:
+
+
+coils:
+  c_flipper_left_main:
+    number: A1-B0-0
+    label:
+    tags:
+    default_pulse_ms: 30
+  c_flipper_left_hold:
+    number: A1-B0-1
+    label:
+    tags:
+    max_hold_power: 1.0
+    allow_enable: true
+  c_flipper_right_main:
+    number: A1-B1-0
+    label:
+    tags:
+    default_pulse_ms: 30
+  c_flipper_right_hold:
+    number: A1-B1-1
+    label:
+    tags:
+    max_hold_power: 1.0
+    allow_enable: true
+
+  c_slingshot_left:
+    number: A1-B0-2
+    label:
+    tags:
+  c_slingshot_right:
+    number: A1-B1-2
+    label:
+    tags:
+
+  c_plunger:
+    number: A1-B1-3
+    label:
+    tags:
+    default_pulse_ms: 15
+
+  c_trough_eject:
+    number: A1-B1-4
+    label:
+    tags:
+    default_pulse_ms: 20
+
+
+playfields:
+  playfield:
+    tags: default
+    default_source_device: bd_plunger
+
+flippers:
+  left_flipper:
+    # main_coil: c_trough
+    # main_coil: c_slingshot_left
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_flipper_left_button
+    enable_events: machine_reset_phase_3
+  right_flipper:
+    # main_coil: c_plunger
+    # main_coil: c_slingshot_right
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_flipper_right_button
+    enable_events: machine_reset_phase_3
+
+autofire_coils:
+  left_slingshot:
+    coil: c_slingshot_left
+    switch: s_slingshot_left
+  right_slingshot:
+    coil: c_slingshot_right
+    switch: s_slingshot_right
+
+ball_devices:
+  bd_trough:
+    ball_switches: s_trough_1, s_trough_2, s_trough_3
+    #, s_trough_4, s_trough_5, s_trough_6, s_trough_jam
+    eject_coil: c_trough_eject
+    tags: trough, home, drain
+    # jam_switch: s_trough_jam
+    eject_coil_jam_pulse: 15ms
+    debug: yes
+  bd_plunger:
+    ball_switches: s_plunger_lane
+    eject_coil: c_plunger
+    player_controlled_eject_event: s_launch_button_active
+    # eject_timeouts: 3s
+
